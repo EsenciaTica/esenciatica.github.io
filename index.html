@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EsenciaTica - Catálogo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <h1>EsenciaTica | Perfumes y Decants</h1>
+    <span>Catálogo de Perfumes 100% Originales</span>
+  </div>
+
+  <div class="cart-icon" onclick="toggleCarrito()">
+    🛒 <span id="cart-count">0</span>
+  </div>
+</header>
+
+
+<div class="controls">
+  <input
+  type="text"
+  id="buscador"
+  placeholder="Buscar perfume..."
+  onkeyup="filtrarTodo()"
+/>
+</div>
+<div class="filters">
+  <select id="filtroMarca" onchange="filtrarTodo()">
+    <option value="">Todas las marcas</option>
+  </select>
+</div>
+
+
+<section id="catalogo" class="catalogo"></section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h3 id="modal-nombre"></h3>
+
+    <label>Tamaño</label>
+    <div id="modal-tamanos" class="tamanos-btns"></div>
+
+    <label>Cantidad</label>
+    <input type="number" id="modal-cantidad" min="1" value="1">
+
+    <div class="modal-actions">
+      <button onclick="confirmar()">Agregar</button>
+      <button class="cancelar" onclick="cerrarModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+<div class="paginacion">
+  <button onclick="paginaAnterior()">◀ Anterior</button>
+  <span id="infoPagina"></span>
+  <button onclick="paginaSiguiente()">Siguiente ▶</button>
+</div>
+
+<div id="carrito-panel" class="carrito-panel">
+  <h3>🛒 Carrito</h3>
+  <ul id="listaCarrito"></ul>
+  <button onclick="enviarWhatsApp()">Enviar pedido por WhatsApp</button>
+</div>
+<footer class="footer">
+  © 2026 EsenciaTica · Todos los derechos reservados
+</footer>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
